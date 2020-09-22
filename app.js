@@ -17,11 +17,10 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-// redirects
-app.get('/about-us', (req, res) => {
-    res.redirect('/about');
-});
-
+// handler function
+app.get('/blogs/create', (req, res) => {
+    res.render();
+})
 // 404 page
 app.use((req, res) => {
     res.status(404).render('404');
