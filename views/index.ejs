@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>Aaron's Blog</title>
+<title>Aaron's Blog | <%= title %></title>
 </head>
 <body>
     <nav>
@@ -25,6 +25,17 @@
 
     <div class="blogs content">
         <h2>All Blogs</h2>
+
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(blog => { %>
+
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snippet"><%= blog.snippet %></p>
+
+            <% }) %>
+        <% } else { %>
+            <p>There are no blogs to display</p>
+        <% } %>
 
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
