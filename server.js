@@ -1,8 +1,8 @@
 const http = require('http');
 const fs = require('fs');
+const _ = require('lodash');
 
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.method);
 
     // set header content type
     res.setHeader('Content-Type', 'text/html');
@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
             path += '404.html';
             res.statusCode = 404;
             break
-    }
+    };
 
     // send an html file
     fs.readFile(path, (err, data) => {
