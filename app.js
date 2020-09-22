@@ -1,8 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
 
+
 // express app
 const app = express();
+
+// connect to mongodb
+const dbURI = 'mongodb+srv://azza434:01132026@myfirstcluster-pffgj.mongodb.net/<dbname>?retryWrites=true&w=majority'
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -10,7 +14,8 @@ app.set('view engine', 'ejs');
 //listen for requests
 app.listen(3000);
 
-//middleware
+//middleware & static files
+app.use(express.static('public'));
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
