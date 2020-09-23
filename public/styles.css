@@ -105,3 +105,18 @@ textarea{
   font-size: 1.2em;
   cursor: pointer;
 }
+.not-found h3{
+  font-size: 7.5rem;
+}
+.not-found .home{
+  position: relative;
+  top: 25px;
+  right: 0;
+  border-radius: 15%;
+  padding: 8px;
+  border: 4px solid #222;
+  font-weight: bold;
+}
+.home:hover{
+  color: crimson;
+}
